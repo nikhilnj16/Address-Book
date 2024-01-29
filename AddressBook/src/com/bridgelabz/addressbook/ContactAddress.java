@@ -1,6 +1,7 @@
 package com.bridgelabz.addressbook;
 
 public class ContactAddress {
+    //instant variables
     String FirstName;
     String LastName;
     String Address;
@@ -9,6 +10,7 @@ public class ContactAddress {
     long PhoneNum;
     String Email;
 
+    // constructor
     public ContactAddress(String firstName, String lastName, String address, String city, int zip, long phoneNum, String email) {
         FirstName = firstName;
         LastName = lastName;
@@ -17,5 +19,18 @@ public class ContactAddress {
         Zip = zip;
         PhoneNum = phoneNum;
         Email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "ContactAddress{" +
+                "FirstName='" + FirstName + '\'' +
+                ", LastName='" + LastName + '\'' +
+                ", Address='" + Address + '\'' +
+                ", City='" + City + '\'' +
+                ", Zip=" + Zip +
+                ", PhoneNum=" + PhoneNum +
+                ", Email='" + Email + '\'' +
+                '}';
     }
 }
