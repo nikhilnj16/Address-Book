@@ -26,6 +26,16 @@ public class AddressBook {
         else {
             System.out.println("No changes done in Contact Data");
         }
+        System.out.println("If you want to delete enter 1 else 0");
+        Scanner scanner3 = new Scanner(System.in);
+        int toDelete = scanner3.nextInt();
+        if (toDelete == 1){
+            deleteContact();
+        }
+        else{
+            System.out.println("No contact is deleted");
+        }
+
     }
     private static void addNewContact(){
 
@@ -65,6 +75,25 @@ public class AddressBook {
 
         }
         
+    }
+    private static void deleteContact(){
+        System.out.println("Enter the fname of the contact to delete: ");
+        Scanner scanner4 = new Scanner(System.in);
+        String ContactToDelete = scanner4.nextLine();
+
+        boolean contactFound = false;
+        for (ContactAddress contact : addressBook){
+            if (contact.getFirstName().equalsIgnoreCase(ContactToDelete)){
+                addressBook.remove(contact);
+                contactFound = true;
+                System.out.println("Contact deleted successfully");
+                break;
+            }
+        }
+        if (!contactFound){
+            System.out.println("Contact not found");
+        }
+
     }
 }
 
