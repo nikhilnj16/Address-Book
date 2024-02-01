@@ -9,7 +9,16 @@ public class AddressBook {
     private static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
         System.out.println("Welcome to Address Book");
-        addNewContact();
+        for(int i=0; i<=10; i++) {
+            System.out.println("Do you want to add new contact?");
+            int wantToAdd = scanner.nextInt();
+            if (wantToAdd == 1) {
+                addNewContact();
+            }
+            else{
+                break;
+            }
+        }
         System.out.println("Want to edit enter 1 or for no edit enter 0");
         int toEdit = scanner.nextInt();
 
@@ -40,15 +49,16 @@ public class AddressBook {
     private static void addNewContact(){
 
         System.out.println("Enter your details \n Firstname \n lastname \n address \n city \n zip, \n phonenum \n email \n ");
-        String FName = scanner.nextLine();
-        String LName = scanner.nextLine();
-        String Address = scanner.nextLine();
-        String City = scanner.nextLine();
-        int Zip = scanner.nextInt();
-        long Num = scanner.nextLong();
+        Scanner scanner5 = new Scanner(System.in);
+        String FName = scanner5.nextLine();
+        String LName = scanner5.nextLine();
+        String Address = scanner5.nextLine();
+        String City = scanner5.nextLine();
+        int Zip = scanner5.nextInt();
+        long Num = scanner5.nextLong();
         // consume the newline character left in the buffer
-        scanner.nextLine();
-        String Email = scanner.nextLine();
+        scanner5.nextLine();
+        String Email = scanner5.nextLine();
 
         ContactAddress obj = new ContactAddress(FName, LName, Address, City, Zip, Num, Email);
         addressBook.add(obj);
