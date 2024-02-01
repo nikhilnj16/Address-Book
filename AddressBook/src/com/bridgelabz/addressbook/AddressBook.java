@@ -10,7 +10,7 @@ public class AddressBook {
     public static void main(String[] args) {
         System.out.println("Welcome to Address Book");
         for(int i=0; i<=10; i++) {
-            System.out.println("Do you want to add new contact?");
+            System.out.println("Do you want to add new contact? Enter 1 else 0");
             int wantToAdd = scanner.nextInt();
             if (wantToAdd == 1) {
                 addNewContact();
