@@ -4,10 +4,16 @@ import java.util.Scanner;
 
 public class ContactManipulation extends AddressBookData {
     public  void addNewContact(){
-
         System.out.println("Enter your details \n Firstname \n lastname \n address \n city \n zip, \n phonenum \n email \n ");
         Scanner scanner5 = new Scanner(System.in);
         String FName = scanner5.nextLine();
+        for (ContactAddress item : addressBook){
+            if(FName.equals(item.FirstName)){
+                System.out.println("Name already exists");
+                System.out.println("Enter your different firstname");
+                FName = scanner5.nextLine();
+            }
+        }
         String LName = scanner5.nextLine();
         String Address = scanner5.nextLine();
         String City = scanner5.nextLine();
