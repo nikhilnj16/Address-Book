@@ -47,6 +47,8 @@ public class AddressBook extends AddressBookData {
         }
         AddressBookData obj1 = new AddressBookData();
         obj1.displayContact();
+        obj1.displayCityDetails();
+
 
     }
 //    private static void addNewContact(){
