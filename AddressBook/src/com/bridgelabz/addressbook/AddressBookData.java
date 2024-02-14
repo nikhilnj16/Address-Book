@@ -7,10 +7,20 @@ import java.util.Scanner;
 public class AddressBookData {
     public static   ArrayList<ContactAddress> addressBook = new ArrayList<>();
     public void displayContact(){
-        Comparator<ContactAddress> comparator = Comparator.comparing(ContactAddress::getFirstName);
-        addressBook.stream()
-                .sorted(comparator)
-                .forEach(System.out::println);
+        Scanner scanner8 = new Scanner(System.in);
+        System.out.println("Want to display details in sorted order of firstname Enter 1 or else 0");
+        int displayNum = scanner8.nextInt();
+        if(displayNum == 1) {
+            Comparator<ContactAddress> comparator = Comparator.comparing(ContactAddress::getFirstName);
+            addressBook.stream()
+                    .sorted(comparator)
+                    .forEach(System.out::println);
+        }
+        else {
+            for(ContactAddress contact : addressBook){
+                System.out.println(contact);
+            }
+        }
     }
     public void displayCityDetails(){
         Scanner scanner7 = new Scanner(System.in);
