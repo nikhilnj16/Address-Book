@@ -8,15 +8,20 @@ public class AddressBookData {
     public static   ArrayList<ContactAddress> addressBook = new ArrayList<>();
     public void displayContact(){
         Scanner scanner8 = new Scanner(System.in);
-        System.out.println("Want to display details in sorted order of firstname Enter 1 or else 0");
+        System.out.println("Want to display details in sorted order of firstname ENTER 1 or for order by city ENTER 2 or else 0");
         int displayNum = scanner8.nextInt();
         if(displayNum == 1) {
             Comparator<ContactAddress> comparator = Comparator.comparing(ContactAddress::getFirstName);
             addressBook.stream()
                     .sorted(comparator)
                     .forEach(System.out::println);
-        }
-        else {
+        } else if (displayNum == 2) {
+            Comparator<ContactAddress> comparator = Comparator.comparing(ContactAddress::getCity);
+            addressBook.stream()
+                    .sorted(comparator)
+                    .forEach(System.out::println);
+
+        } else {
             for(ContactAddress contact : addressBook){
                 System.out.println(contact);
             }
