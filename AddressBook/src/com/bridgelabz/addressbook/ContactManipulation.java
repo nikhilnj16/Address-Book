@@ -75,3 +75,4 @@ public class ContactManipulation extends AddressBookData {
         addressBook.stream().sorted().forEach(System.out::println);
     }
 }
+
