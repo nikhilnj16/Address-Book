@@ -49,7 +49,7 @@ public class AddressBook extends AddressBookData {
         obj1.displayContact();
         obj1.displayCityDetails();
         obj1.displayAllCityDetails();
-
+        obj1.displayNoOfPerInACityDetails();
 
     }
 }
